@@ -1,0 +1,14 @@
+extends layout.pug
+
+block styles
+  link(rel='stylesheet' href='/css/all.css')
+
+block scripts
+  script(src='/js/shareCode.js' type="module" defer)
+  script(src='/js/session.js' type="module" defer)
+
+block content
+  div
+    h3.ui.header Фильм:
+    div#film Не был задан номер сеанса.
+    textarea#user-token(placeholder="Идентификатор:")

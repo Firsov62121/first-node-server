@@ -1,0 +1,31 @@
+extends layout.pug
+
+block styles
+  link(rel='stylesheet' href='/css/all.css')
+
+block scripts
+  script(src='/js/shareCode.js' type="module" defer)
+  script(src='/js/film.js' type="module" defer)
+
+block content
+  .ui.segment.new-film-form
+    h1 Новый фильм:
+    form.ui.form#new-film-form(action="/" method="POST")
+      .field
+        label Название:
+        textarea#film-name(rows='1')
+        label Описание:
+        textarea#film-desc(rows="10") 
+        label Оценка пользователей:
+        textarea#film-score(rows="1")
+        label Постер: 
+        input#file-img(type="file") 
+        img#blah(src="#", alt="")
+          
+        
+      button.ui.tiny.teal.button Добавить
+
+  .ui.divider.divider_big
+  div
+    h3.ui.header Текущие фильмы:
+    div#films Пока нет фильмов
